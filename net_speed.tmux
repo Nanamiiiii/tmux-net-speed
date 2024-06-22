@@ -19,7 +19,7 @@ do_interpolation() {
 	result=${result/$net_interpolation/$net_speed}
 	result=${result/$upload_interpolation/$upload_speed}
 
-	echo $result
+	echo "$result"
 }
 
 update_tmux_option() {
