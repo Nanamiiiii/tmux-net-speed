@@ -125,7 +125,6 @@ sum_speed_osx()
     local line=""
     local val=0
     for intf in ${interfaces[@]} ; do
-        line=$(cat /proc/net/dev | grep "$intf" | cut -d':' -f 2)
         line=$(netstat -ib | awk -v interface="$intf" '/^'"${intf}"'/ {print $7, $10}' | head -n1)
         speed="$(echo -n $line | cut -d' ' -f $column)"
         let val+=${speed:=0}
