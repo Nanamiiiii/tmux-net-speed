@@ -5,8 +5,12 @@ source "$CURRENT_DIR/helpers.sh"
 
 sum_upload_speed()
 {
-    # Output uses ninth column
-    sum_speed 9
+    if is_osx; then
+        sum_speed_osx 2
+    else
+        # Output uses first column
+        sum_speed 9
+    fi
 }
 
 main()
